@@ -4,9 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./js/main.js"></script>
+    <script src="./js/main.js" defer></script>
     <link rel="stylesheet" href="./styles/styles.css">
     <title>Pakemon Game</title>
+  <template id="pokemon-card__template">
+    <li>
+      <div class="pokemon-card">
+        <img>
+        <h5></h5>
+      </div>
+    </li>
+  </template>
   </head>
   <body>
     <header>
@@ -21,39 +29,8 @@
         </form>
       </section>
       <section>
-        <ul class="pokemon-list">
-          <li>
-            <div class="pokemon-card">
-              <img src="./img/bulbasaur.png">
-              <h5>
-                Bulbasaur
-              </h5>
-            </div>
-          </li>
-          <li>
-            <div class="pokemon-card">
-              <img src="./img/bulbasaur.png">
-              <h5>
-                Bulbasaur
-              </h5>
-            </div>
-          </li>
-          <li>
-            <div class="pokemon-card">
-              <img src="./img/bulbasaur.png">
-              <h5>
-                Bulbasaur
-              </h5>
-            </div>
-          </li>
-          <li>
-            <div class="pokemon-card">
-              <img src="./img/bulbasaur.png">
-              <h5>
-                Bulbasaur
-              </h5>
-            </div>
-          </li>
+        <ul class="pokemon-list" id="pokemon-list">
+          
         </ul>
       </section>
     </main>
