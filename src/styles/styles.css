@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Press+Start+2P&display=swap');
+
+:root {
+    --main-bg-color: #F4F4F8;
+    --primary-color: #FE4A49;
+    --secondary-color: #2AB7CA;
+    --accent1-color: #FED766;
+    --accent2-color: #E6E6EA;
+
+    --heading-font-family: 'Press Start 2P', cursive;
+    --text-font-family: 'Play', sans-serif;
+}
+
+body {
+    width: 960px;
+    margin: auto;
+    background-color: var(--main-bg-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font-family)
+}
+
+p {
+    font-family: var(--text-font-family)
+}
+
+ul > li {
+    list-style-type: none;
+}
+
+.head-title h1 {
+    text-align: center;
+}
+
+.search-section {
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.search-section > input {
+    width: 250px;
+    height: 25px;
+    border: 3px solid;
+    font-family: var(--text-font-family);
+    padding-left: 10px;
+}
+
+.pokemon-card {
+    padding: 5px;
+    width: 130px;
+    height: 160px;
+    border: 2px solid;
+    margin: 5px;
+    transition: background-color 200ms linear;
+}
+
+.pokemon-card img {
+    width: 120px;
+    height: 120px;
+}
+
+.pokemon-card:hover {
+    background-color: #FE4A49;
+    cursor: pointer;
+}
+
+.pokemon-list {
+    display: flex;
+    flex-wrap: wrap;
+}
