@@ -42,6 +42,10 @@ export default class DataHandler {
 
         console.log(res);
     }
+
+    async getMoves() {
+        
+    }
     
     prepareTemplate(clone, pokemon) {
         clone.querySelector('img').src = `./img/${pokemon.name}-front.png`;
