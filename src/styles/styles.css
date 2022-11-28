@@ -93,3 +93,17 @@ main {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.select-moves-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--primary-color);
+}
+
+.moves-available-list {
+    border: 2px solid;
+}
+
+.moves-selected-list {
+    border: 2px solid;
+}
