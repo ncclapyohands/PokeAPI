@@ -37,7 +37,7 @@ export default class DataHandler {
     }
     
     prepareTemplate(clone, pokemon) {
-        clone.querySelector('img').src = './img/bulbasaur.png';
+        clone.querySelector('img').src = `./img/${pokemon.name}-front.png`;
         clone.querySelector('h5').innerHTML = pokemon.name;
     }
 
