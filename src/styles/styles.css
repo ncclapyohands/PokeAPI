@@ -49,6 +49,7 @@ main {
     width: 100vw;
     flex: 0 0 auto;
     transition: all .5s;
+    padding: 1em;
 }
 
 .slide {
@@ -94,16 +95,34 @@ main {
     justify-content: center;
 }
 
+#pokemon-details {
+    text-align: center;
+}
+
 .select-moves-container {
     display: flex;
     justify-content: space-around;
-    background-color: var(--primary-color);
 }
 
-.moves-available-list {
+.select-moves-container div {
     border: 2px solid;
+}
+
+.select-moves-container li {
+    cursor: pointer;
+}
+
+.moves-list {
+    display: flex;
+    width: 40vw;
+    flex-wrap: wrap;
+}
+
+.moves-list > li {
+    margin: .5em;
 }
 
 .moves-selected-list {
-    border: 2px solid;
+    display: flex;
+    width: 40vw;
 }

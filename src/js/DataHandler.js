@@ -39,12 +39,11 @@ export default class DataHandler {
     async getPokemon(url) {
         const res = await fetch(url)
           .then(convertToJson).then((data) => data);
-
-        console.log(res);
+        return res
     }
 
     async getMoves() {
-        
+
     }
     
     prepareTemplate(clone, pokemon) {
