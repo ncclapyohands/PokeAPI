@@ -31,5 +31,5 @@ document.getElementById('moves-available-list').addEventListener('click', (e) =>
 });
 
 document.getElementById('moves-selected-list').addEventListener('click', (e) => {
-    pokemon.addSelectedMove(e.target.dataset.move_name);
+    pokemon.removeSelectedMove(e.target.dataset.move_name);
 });

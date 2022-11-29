@@ -47,7 +47,7 @@ export default class Pokemon {
     }
 
     addSelectedMove(move) {
-        if (this.selectedMoves.indexOf(move) > -1 || this.selectedMoves.length >= 4) {
+        if (this.selectedMoves.indexOf(move) > -1 || this.selectedMoves.length >= 4 || move == undefined) {
             return;
         }
         
@@ -61,7 +61,7 @@ export default class Pokemon {
         }
         
         const index = this.selectedMoves.indexOf(move);
-        this.selectedMoves.splice(index);
+        this.selectedMoves.splice(index, 1);
         this.displaySelectedMoves();
     }
 }
