@@ -24,8 +24,8 @@ export default class Pokemon {
     generateMoves(movesListElement, list) {
         list.forEach(move => {
             const moveElement = document.createElement('li');
-            moveElement.dataset.move_name = move.move.name;
-            moveElement.innerHTML = move.move.name;
+            moveElement.dataset.move_name = move.name;
+            moveElement.innerHTML = move.name;
             movesListElement.appendChild(moveElement);
         });
     }
