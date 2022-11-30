@@ -35,10 +35,21 @@ export default class DataHandler {
             listElement.appendChild(clone);    
         });
     }
+
+    async getPokemon(url) {
+        const res = await fetch(url)
+          .then(convertToJson).then((data) => data);
+        return res
+    }
+
+    async getMoves() {
+
+    }
     
     prepareTemplate(clone, pokemon) {
-        clone.querySelector('img').src = './img/bulbasaur.png';
+        clone.querySelector('img').src = `./img/${pokemon.name}-front.png`;
         clone.querySelector('h5').innerHTML = pokemon.name;
+        clone.querySelector('li').dataset.url = pokemon.url;
     }
 
     filterByName(name) {

@@ -49,6 +49,7 @@ main {
     width: 100vw;
     flex: 0 0 auto;
     transition: all .5s;
+    padding: 1em;
 }
 
 .slide {
@@ -92,4 +93,51 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+#pokemon-details {
+    text-align: center;
+}
+
+.select-moves-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.select-moves-container div {
+    border: 2px solid;
+}
+
+.select-moves-container li {
+    cursor: pointer;
+}
+
+.moves-list {
+    display: flex;
+    width: 40vw;
+    flex-wrap: wrap;
+}
+
+.moves-list > li {
+    margin: .5em;
+}
+
+.moves-selected-list {
+    display: flex;
+    width: 40vw;
+}
+
+.buttons-row {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-row button {
+    border: 3px solid lightgrey;
+    height: 4em;
+    width: 12em;
+    margin: 10px;
+    background-color: #FE4A49;
+    border-radius: 10px;
+    cursor: pointer;
 }
