@@ -11,8 +11,8 @@ async function slideEvent(e) {
     document.querySelector('#pokemon-moveset').classList.toggle('slide');
 
     if (pokemonListElement.classList.contains('slide')) {
-        const url =  e.path[2].dataset.url;
-        const res = await dataHandler.getPokemon(url);
+        const id =  e.path[2].dataset.id;
+        const res = await dataHandler.getPokemon(id);
 
         console.log(res)
 

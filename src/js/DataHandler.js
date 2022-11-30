@@ -1,4 +1,4 @@
-const baseUrl = 'http://pokeapi.co/api/v2';
+const baseUrl = 'http://localhost:3000';
 
 
 export default class DataHandler {
@@ -16,11 +16,11 @@ export default class DataHandler {
     }
 
     async getData() {
-        const res = await fetch(`${baseUrl}/pokemon/?limit=151`)
+        const res = await fetch(`${baseUrl}/pokemon/`)
           .then(convertToJson).then((data) => data);
         
-        this.pokemons = res.results
-        this.generatePokemons(res.results)
+        this.pokemons = res
+        this.generatePokemons(res)
     }
 
     generatePokemons(pokemons) {
@@ -36,8 +36,8 @@ export default class DataHandler {
         });
     }
 
-    async getPokemon(url) {
-        const res = await fetch(url)
+    async getPokemon(id) {
+        const res = await fetch(`${baseUrl}/pokemon/${id}`)
           .then(convertToJson).then((data) => data);
         return res
     }
@@ -49,7 +49,7 @@ export default class DataHandler {
     prepareTemplate(clone, pokemon) {
         clone.querySelector('img').src = `./img/${pokemon.name}-front.png`;
         clone.querySelector('h5').innerHTML = pokemon.name;
-        clone.querySelector('li').dataset.url = pokemon.url;
+        clone.querySelector('li').dataset.id = pokemon.id;
     }
 
     filterByName(name) {
