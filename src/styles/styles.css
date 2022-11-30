@@ -126,3 +126,18 @@ main {
     display: flex;
     width: 40vw;
 }
+
+.buttons-row {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-row button {
+    border: 3px solid lightgrey;
+    height: 4em;
+    width: 12em;
+    margin: 10px;
+    background-color: #FE4A49;
+    border-radius: 10px;
+    cursor: pointer;
+}
