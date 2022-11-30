@@ -26,16 +26,32 @@
             <input type="text" placeholder="Search" id="search-input" name="search-input">
           </section>
           <section>
-            <ul class="pokemon-list" id="pokemon-list">
-              
-            </ul>
+            <ul class="pokemon-list" id="pokemon-list"></ul>
           </section>
         </section>
         <section id="pokemon-moveset">
           <div class="head-title">
             <h1>Moveset</h1>
           </div>
-          <button id="back">Back</button>
+          <section class="search-section">
+            <h3>Intructions: Choose 4 moves (drag and drop)</h3>
+          </section>
+          <section id="pokemon-details">
+          </section>
+          <section class="select-moves-container">
+            <div>
+              <ul id="moves-available-list" class="moves-list">
+              </ul>
+            </div>
+            <div>
+              <ul id="moves-selected-list" class="moves-list">
+              </ul>
+            </div>
+          </section>
+          <div class="buttons-row">
+            <button id="back">Back</button>
+            <button id="start">Start</button>
+          </div>
         </section>
       
     </main>
