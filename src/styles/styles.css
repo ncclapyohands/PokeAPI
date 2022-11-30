@@ -52,8 +52,18 @@ main {
     padding: 1em;
 }
 
+#game {
+    width: 100vw;
+    flex: 0 0 auto;
+    transition: all .5s;
+}
+
 .slide {
     transform: translateX(-100vw);
+}
+
+.slide-again {
+    transform: translateX(-200vw);
 }
 
 .search-section {

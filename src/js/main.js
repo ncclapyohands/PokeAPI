@@ -24,11 +24,19 @@ async function slideEvent(e) {
     }
 }
 
+function slideAgainEvent(e) {
+    e.preventDefault();
+    document.querySelector('#pokemon-moveset').classList.toggle('slide-again');
+    document.querySelector('#game').classList.toggle('slide-again');
+}
+
 document.getElementById('pokemon-list').addEventListener('click', slideEvent)
 document.getElementById('back').addEventListener('click', slideEvent)
 document.getElementById('moves-available-list').addEventListener('click', (e) => {
     pokemon.addSelectedMove(e.target.dataset.move_name);
 });
+
+document.getElementById('start').addEventListener('click', slideAgainEvent)
 
 document.getElementById('moves-selected-list').addEventListener('click', (e) => {
     pokemon.removeSelectedMove(e.target.dataset.move_name);
