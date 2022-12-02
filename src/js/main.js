@@ -41,6 +41,7 @@ document.getElementById('start').addEventListener('click', slideAgainEvent)
 document.getElementById('moves-selected-list').addEventListener('click', (e) => {
     pokemon.removeSelectedMove(e.target.dataset.move_name);
 });
+//if 
 function slideBackEvent(e){
     e.preventDefault
     document.querySelector('#results').classList.toggle('slide-back');
