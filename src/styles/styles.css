@@ -132,13 +132,11 @@ main {
 .moves-list >li:hover {
     background-color: #595faa;
     cursor: pointer;
-
 }
 
 .moves-list > li {
     margin: .5em;
     padding: 5px;
-
 }
 
 .moves-selected-list {
