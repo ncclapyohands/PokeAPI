@@ -94,9 +94,6 @@ main {
     flex-wrap: wrap;
     justify-content: center;
 }
-.pokemon-moveset:hover {
-    background-color: rgb(71, 71, 153);
-}
 
 #pokemon-details {
     text-align: center;
@@ -113,6 +110,8 @@ main {
 
 .select-moves-container li {
     cursor: pointer;
+    border: 2px solid;
+    margin: 5px;
 }
 
 .moves-list {
@@ -120,9 +119,16 @@ main {
     width: 40vw;
     flex-wrap: wrap;
 }
+.moves-list >li:hover {
+    background-color: #595faa;
+    cursor: pointer;
+
+}
 
 .moves-list > li {
     margin: .5em;
+    padding: 5px;
+
 }
 
 .moves-selected-list {
