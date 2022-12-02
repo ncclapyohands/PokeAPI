@@ -41,4 +41,9 @@ document.getElementById('start').addEventListener('click', slideAgainEvent)
 document.getElementById('moves-selected-list').addEventListener('click', (e) => {
     pokemon.removeSelectedMove(e.target.dataset.move_name);
 });
-document.getElementById('back-to-select').addEventListener('click', slideEvent)
+function slideBackEvent(e){
+    e.preventDefault
+    document.querySelector('#results').classList.toggle('slide-back');
+    document.querySelector('#pokemon-list-container').classList.toggle('slide-back');
+}
+document.getElementById('back-to-select').addEventListener('click', slideBackEvent)
