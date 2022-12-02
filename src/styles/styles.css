@@ -144,12 +144,27 @@ main {
     width: 40vw;
 }
 
-.buttons-row {
+.buttons-row1 {
     display: flex;
     justify-content: center;
 }
 
-.buttons-row button {
+.buttons-row1 button {
+    border: 3px solid lightgrey;
+    height: 4em;
+    width: 12em;
+    margin: 10px;
+    background-color: #FE4A49;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.buttons-row2 {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-row2 button {
     border: 3px solid lightgrey;
     height: 4em;
     width: 12em;
