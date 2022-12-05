@@ -37,6 +37,9 @@ export default class DataHandler {
     }
 
     async getPokemon(id) {
+      if(!id){
+        throw("Id is undefined");
+      }
         const res = await fetch(`${baseUrl}/pokemon/${id}`)
           .then(convertToJson).then((data) => data);
         return res
