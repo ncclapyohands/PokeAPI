@@ -10,11 +10,17 @@ async function slideEvent(e) {
     pokemonListElement.classList.toggle('slide');
     document.querySelector('#pokemon-moveset').classList.toggle('slide');
 
-    if (pokemonListElement.classList.contains('slide')) {
-        const id =  e.path[2].dataset.id;
-        const res = await dataHandler.getPokemon(id);
+    //scroll to top of page automatically
+    window.scrollTo(0, 0);
+    
 
-        console.log(res)
+    if (pokemonListElement.classList.contains('slide')) {
+      //find li element no matter the index 
+        const li = e.path.find(item => {
+          return item.nodeName === "LI";
+        })
+        const id =  li.dataset.id;
+        const res = await dataHandler.getPokemon(id);
 
         pokemon = new Pokemon(res.name, res.moves);
         pokemon.displayPokemon();
