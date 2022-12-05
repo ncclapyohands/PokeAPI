@@ -130,7 +130,7 @@ main {
     flex-wrap: wrap;
 }
 .moves-list >li:hover {
-    background-color: #595faa;
+    background-color: #2AB7CA;
     cursor: pointer;
 }
 
@@ -173,3 +173,4 @@ main {
     border-radius: 10px;
     cursor: pointer;
 }
+
