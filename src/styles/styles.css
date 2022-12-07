@@ -130,13 +130,15 @@ main {
     flex-wrap: wrap;
 }
 .moves-list >li:hover {
-    background-color: #2AB7CA;
+    background-color: #595faa;
     cursor: pointer;
+
 }
 
 .moves-list > li {
     margin: .5em;
     padding: 5px;
+
 }
 
 .moves-selected-list {
@@ -144,12 +146,12 @@ main {
     width: 40vw;
 }
 
-.buttons-row1 {
+.buttons-row {
     display: flex;
     justify-content: center;
 }
 
-.buttons-row1 button {
+.buttons-row button {
     border: 3px solid lightgrey;
     height: 4em;
     width: 12em;
@@ -159,17 +161,33 @@ main {
     cursor: pointer;
 }
 
-.buttons-row2 {
-    display: flex;
-    justify-content: center;
+#start-screen{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 
-.buttons-row2 button {
-    border: 3px solid lightgrey;
-    height: 4em;
-    width: 12em;
-    margin: 10px;
-    background-color: #FE4A49;
-    border-radius: 10px;
-    cursor: pointer;
+#battle-stage{
+  height: 100vh;
+  width: 100vh;
+  display: none;
+  transition: display 2s;
+}
+
+#appear{
+  display: inline-block;
+}
+
+#opponant{
+  height: 50vh;
+  width: 100vw;
+}
+
+#user{
+  height: 50vh;
+  width: 100vw;
 }
