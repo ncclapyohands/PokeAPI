@@ -162,5 +162,32 @@ main {
 }
 
 #start-screen{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
+}
+
+#battle-stage{
+  height: 100vh;
+  width: 100vh;
+  display: none;
+  transition: display 2s;
+}
+
+#appear{
+  display: inline-block;
+}
+
+#opponant{
+  height: 50vh;
+  width: 100vw;
+}
+
+#user{
+  height: 50vh;
+  width: 100vw;
 }
