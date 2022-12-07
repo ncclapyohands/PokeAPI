@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./js/main.js" type="module"></script>
+    <script src="./js/BattleStage.js" type="module"></script>
     <link rel="stylesheet" href="./styles/styles.css">
     <title>Pakemon Game</title>
   <template id="pokemon-card__template">
@@ -57,14 +58,13 @@
           </div>
         </section>
         <section id="game">
-          <div class="head-title">
-            <h1>Fight!</h1>
+          <div id="start-screen">
+            <h2>Click the button below to start the battle</h2>
+            <a id="StartGame" href=""><img src="./img/start-image.png" alt="Start Button"></a>
           </div>
-        </section>
-        <section id="results">
-          <div class="head-title">
-            <h1>Congratulations!!</h1>
+          <div id="battle-stage">
           </div>
+          <div id="results-stage"></div>
         </section>
           <div class="buttons-row2">
             <button id="back-to-select">Play Again?</button>
