@@ -34,8 +34,8 @@ export default class Pokemon {
         removeAllChildNodes(movesListElement);
         list.forEach(move => {
             const moveElement = document.createElement('li');
-            moveElement.dataset.move_name = move;
-            moveElement.innerHTML = move;
+            moveElement.dataset.move_name = move.name;
+            moveElement.innerHTML = move.name;
             movesListElement.appendChild(moveElement);
         });
     }
@@ -50,8 +50,10 @@ export default class Pokemon {
         if (this.selectedMoves.indexOf(move) > -1 || this.selectedMoves.length >= 4 || move == undefined) {
             return;
         }
-        
-        this.selectedMoves.push(move);
+        const addMove = this.moves.find((m) => {
+          return m.name === move
+        })
+        this.selectedMoves.push(addMove);
         this.displaySelectedMoves();
     }
 
