@@ -1,6 +1,9 @@
 import DataHandler from "./DataHandler";
 import Pokemon from "./Pokemon";
 
+const BattleAudio = new Audio('../audio/Pokémon FireRed & LeafGreen - Gym Leader & Elite Four Battle Music (HQ).mp3');
+const VictoryAudio = new Audio('../audio/Victory! Trainer Theme.mp3');
+const LoseAudio = new Audio('../audio/Epic Sad Music - The Greatest Defeat.mp3');
 //Start the game on click
 const start_screen = document.querySelector("#start-screen");
 const battle_stage = document.querySelector("#battle-stage");
@@ -8,6 +11,8 @@ document.querySelector('#StartGame').addEventListener("click", (e) => {
   e.preventDefault();
   start_screen.style.display = 'none';
   battle_stage.style.display = 'inline-block';
+  
+  BattleAudio.play();
 });
 
 export default class Battle{
@@ -91,9 +96,19 @@ export default class Battle{
       this.console.innerHTML += `<br>${this.userPokemon.name} HP: ${this.userPokemon.stats.hp}`;
     }
 
-    if(this.userPokemon.stats.hp <= 0 || this.opponentPokemon.stats.hp <= 0){
+    if(this.userPokemon.stats.hp <= 0){
+      //user lost :(
       this.game = false;
-      this.console.innerHTML += '<br>Game Over';
+      this.console.innerHTML += '<br>Game Over - Defeated';
+      BattleAudio.pause();
+      LoseAudio.play();
+    }
+    else if(this.opponentPokemon.stats.hp <= 0){
+      //user won :)
+      this.game = false;
+      this.console.innerHTML += '<br>Game Over - Victory!!';
+      BattleAudio.pause();
+      VictoryAudio.play();
     }
     return;
   }
