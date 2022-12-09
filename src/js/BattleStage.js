@@ -46,7 +46,6 @@ export default class Battle{
     const index = Math.floor(Math.random() * 3);
     this.Action(false, this.opponentPokemon.selectedMoves[index]);
 
-
     this.userTurn = true;
   }
 
@@ -59,7 +58,7 @@ export default class Battle{
     this.Action(true, move);
     this.userTurn = false;
     if(this.game){
-      this.Opponent();
+      setTimeout(this.Opponent.bind(this), 3000);
     }
   }
 
