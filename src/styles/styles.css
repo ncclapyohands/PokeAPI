@@ -182,12 +182,22 @@ main {
   display: inline-block;
 }
 
-#opponant{
-  height: 50vh;
+#opponent{
+  height: 30vh;
   width: 100vw;
 }
 
 #user{
-  height: 50vh;
+  height: 30vh;
   width: 100vw;
+}
+
+#console{
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-y: auto;
+  background-color: black;
+  color: white;
 }

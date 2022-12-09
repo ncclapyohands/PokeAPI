@@ -22,8 +22,13 @@ async function slideEvent(e) {
         })
         const id =  li.dataset.id;
         const res = await dataHandler.getPokemon(id);
-
-        pokemon = new Pokemon(res.name, res.moves);
+        let stats = {
+          hp : res.hp, 
+          attack: res.attack, 
+          defense: res.defense, 
+          speed: res.speed
+        }
+        pokemon = new Pokemon(res.name, res.moves, stats);
         pokemon.displayPokemon();
     } else {
         pokemon = new Pokemon('', []);
@@ -65,42 +70,40 @@ function displayBattle(battle){
   const battle_stage = document.querySelector("#battle-stage");
   console.log(battle);
   const template = `
-    <div id='opponant'>
-    <img src='../img/${battle.opponantPokemon.name}-front.png' alt='${battle.opponantPokemon.name} picture'>
-      <table>
-        <tr>
-          <td>${battle.opponantPokemon.selectedMoves[0].name}<td>
-          <td>${battle.opponantPokemon.selectedMoves[1].name}<td>
-        </tr>
-        <tr>
-          <td>${battle.opponantPokemon.selectedMoves[2].name}<td>
-          <td>${battle.opponantPokemon.selectedMoves[3].name}<td>
-        </tr>
-      </table>
+    <div id='opponent'>
+      <h3>${battle.opponentPokemon.name}</h3>
+      <img src='../img/${battle.opponentPokemon.name}-front.png' alt='${battle.opponentPokemon.name} picture'>
     </div>
     <div id='user'>
+      <h3>${battle.userPokemon.name}</h3>
       <img src='../img/${battle.userPokemon.name}-back.png' alt='${battle.userPokemon.name} picture'>
       <table>
         <tr>
-          <td>${battle.userPokemon.selectedMoves[0].name}<td>
-          <td>${battle.userPokemon.selectedMoves[1].name}<td>
+          <td class="selected-moves" index="0">${battle.userPokemon.selectedMoves[0].name}<td>
+          <td class="selected-moves" index="1">${battle.userPokemon.selectedMoves[1].name}<td>
         </tr>
         <tr>
-          <td>${battle.userPokemon.selectedMoves[2].name}<td>
-          <td>${battle.userPokemon.selectedMoves[3].name}<td>
+          <td class="selected-moves" index="2">${battle.userPokemon.selectedMoves[2].name}<td>
+          <td class="selected-moves" index="3">${battle.userPokemon.selectedMoves[3].name}<td>
         </tr>
       </table>
-    </div>`;
+    </div>
+    <div id='console'></div>`;
   battle_stage.innerHTML += template;
+  battle.StartBattle();
 }
 
 async function pickRandomPokemon(){
   //choose random number from 0-150. Select pokemon using id
   const id = Math.floor(Math.random() * 150);
   let randPokemon = await new DataHandler('').getPokemon(id);
-  console.log(randPokemon);
-
-  let pokemon = new Pokemon(randPokemon.name, randPokemon.moves);
+  let stats = {
+    hp : randPokemon.hp, 
+    attack: randPokemon.attack, 
+    defense: randPokemon.defense, 
+    speed: randPokemon.speed
+  }
+  let pokemon = new Pokemon(randPokemon.name, randPokemon.moves, stats);
 
   //select 4 random moves from its move set
   const numMoves = pokemon.moves.length;
@@ -109,8 +112,6 @@ async function pickRandomPokemon(){
     const randMove = pokemon.moves[randId];
     pokemon.selectedMoves.push(randMove);
   }
-
-  console.log(pokemon.selectedMoves)
   //return pokemon
   return pokemon;
 }

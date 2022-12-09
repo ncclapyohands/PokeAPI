@@ -1,10 +1,11 @@
 import { removeAllChildNodes } from "./utils.js";
 
 export default class Pokemon {
-    constructor(name, moves) {
+    constructor(name, moves, stats) {
         this.name = name;
         this.moves = moves;
         this.selectedMoves = [];
+        this.stats = stats;
     }
 
     displayPokemon() {
