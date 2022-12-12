@@ -58,12 +58,9 @@ export default class Pokemon {
         this.displaySelectedMoves();
     }
 
-    removeSelectedMove(move) {
-        if (this.selectedMoves.indexOf(move) == -1) {
-            return;
-        }
-        
-        const index = this.selectedMoves.indexOf(move);
+    removeSelectedMove(move) {        
+        const sMove = this.selectedMoves.find(element => element.name == move);
+        const index = this.selectedMoves.indexOf(sMove);
         this.selectedMoves.splice(index, 1);
         this.displaySelectedMoves();
     }
