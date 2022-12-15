@@ -70,26 +70,35 @@ function displayBattle(battle){
   const battle_stage = document.querySelector("#battle-stage");
   console.log(battle);
   const template = `
+  <div id='pokemon-stage'>
     <div id='opponent'>
-      <h3>${battle.opponentPokemon.name}</h3>
-      <img src='../img/${battle.opponentPokemon.name}-front.png' alt='${battle.opponentPokemon.name} picture'>
-    </div>
-    <div id='user'>
-      <h3>${battle.userPokemon.name}</h3>
-      <img src='../img/${battle.userPokemon.name}-back.png' alt='${battle.userPokemon.name} picture'>
-      <table>
+        <h3>${battle.opponentPokemon.name}</h3>
+        <img src='../img/${battle.opponentPokemon.name}-front.png' alt='${battle.opponentPokemon.name} picture' id='oppImgPokemon'>
+
+     </div>
+     <div id='user'>
+       <h3>${battle.userPokemon.name}</h3>
+        <img src='../img/${battle.userPokemon.name}-back.png' alt='${battle.userPokemon.name} picture' id='userImgPokemon'>
+
+        <table id='move-table'>
         <tr>
-          <td class="selected-moves" index="0">${battle.userPokemon.selectedMoves[0].name}<td>
-          <td class="selected-moves" index="1">${battle.userPokemon.selectedMoves[1].name}<td>
+          <th colspan='2'>Moves</th>
         </tr>
-        <tr>
-          <td class="selected-moves" index="2">${battle.userPokemon.selectedMoves[2].name}<td>
-          <td class="selected-moves" index="3">${battle.userPokemon.selectedMoves[3].name}<td>
-        </tr>
-      </table>
+          <tr>
+            <td class="selected-moves" index="0">${battle.userPokemon.selectedMoves[0].name}</td>
+            <td class="selected-moves" index="1">${battle.userPokemon.selectedMoves[1].name}</td>
+          </tr>
+          <tr>
+            <td class="selected-moves" index="2">${battle.userPokemon.selectedMoves[2].name}</td>
+            <td class="selected-moves" index="3">${battle.userPokemon.selectedMoves[3].name}</td>
+          </tr>
+        </table>
+      </div>
     </div>
     <div id='console'></div>`;
+
   battle_stage.innerHTML += template;
+  
   battle.StartBattle();
 }
 

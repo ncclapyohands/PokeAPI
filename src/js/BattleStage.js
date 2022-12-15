@@ -16,21 +16,26 @@ document.querySelector('#StartGame').addEventListener("click", (e) => {
 });
 
 export default class Battle{
-  constructor(userPokemon, opponantPokemon){
+  constructor(userPokemon, opponentPokemon){
     this.userPokemon = userPokemon;
-    this.opponentPokemon = opponantPokemon;
+    this.opponentPokemon = opponentPokemon;
   }
 
   StartBattle(){
     this.game = true;
     this.console = document.querySelector("#console");
+    
+
     if(this.userPokemon.stats.speed >= this.opponentPokemon.stats.speed){
       this.userTurn = true;
-      this.console.innerHTML = `${this.userPokemon.name} starts first`;
+      this.console.innerHtml = `A wild ${this.opponentPokemon.name} has appeared!`;
+      this.console.innerHTML = `${this.userPokemon.name} is faster so it starts first!`;
+      this.console.innerHtml = `What do you want to do?`;
     }
     else{
       this.userTurn = false;
-      this.console.innerHTML = `${this.opponentPokemon.name} starts first`;
+      this.console.innerHtml = `A wild ${this.opponentPokemon.name} has appeared!`;
+      this.console.innerHTML = `${this.opponentPokemon.name} is faster so it attacks first!`;
       this.Opponent();
     }
 
@@ -109,6 +114,8 @@ export default class Battle{
       BattleAudio.pause();
       VictoryAudio.play();
     }
+
+
     return;
   }
 }
