@@ -28,13 +28,13 @@ export default class Battle{
 
     if(this.userPokemon.stats.speed >= this.opponentPokemon.stats.speed){
       this.userTurn = true;
-      this.console.innerHtml = `A wild ${this.opponentPokemon.name} has appeared!`;
+      this.console.innerHTML = `A wild ${this.opponentPokemon.name} has appeared!`;
       this.console.innerHTML = `${this.userPokemon.name} is faster so it starts first!`;
-      this.console.innerHtml = `What do you want to do?`;
+      this.console.innerHTML = `What do you want to do?`;
     }
     else{
       this.userTurn = false;
-      this.console.innerHtml = `A wild ${this.opponentPokemon.name} has appeared!`;
+      this.console.innerHTML = `A wild ${this.opponentPokemon.name} has appeared!`;
       this.console.innerHTML = `${this.opponentPokemon.name} is faster so it attacks first!`;
       this.Opponent();
     }
