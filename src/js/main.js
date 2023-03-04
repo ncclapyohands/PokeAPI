@@ -13,11 +13,11 @@ async function slideEvent(e) {
 
     //scroll to top of page automatically
     window.scrollTo(0, 0);
-    
+    const path = e.composedPath ? e.composedPath() : e.path;
 
     if (pokemonListElement.classList.contains('slide')) {
       //find li element no matter the index 
-        const li = e.path.find(item => {
+        const li = path.find(item => {
           return item.nodeName === "LI";
         })
         const id =  li.dataset.id;
